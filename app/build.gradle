@@ -1,0 +1,36 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'checkstyle'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "io.github.ziginsider.epam_laba_9"
+        minSdkVersion 14
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+    }
+}
+
+task checkstyle(type: Checkstyle) {
+    configFile = rootProject.file('config/checkstyle/checkstyle.xml')
+
+    source 'src/main/java'
+    include '**/*.java'
+    exclude '**/gen/**'
+
+    classpath = files()
+}
+
+checkstyle {
+    dependencies {checkstyle "com.puppycrawl.tools:checkstyle:8.8"}
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support:design:26.1.0'
+}
