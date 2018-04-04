@@ -9,5 +9,5 @@
     <item
         android:id="@+id/nav_fragment_second"
         android:icon="@drawable/ic_fragment_second"
-        android:title="Gallery" />
+        android:title="second fragment />
 </menu>
