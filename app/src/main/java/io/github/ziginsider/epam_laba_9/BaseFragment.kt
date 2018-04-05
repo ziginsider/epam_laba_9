@@ -6,13 +6,13 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import io.github.ziginsider.epam_laba_8.utils.logd
+import io.github.ziginsider.epam_laba_9.utils.logd
 
 /**
  * <tt>Abstract</tt> Base Fragment that contains the base implementation for Fragment
  *
  * @author Alex Kisel
- * @since 2018-04-03
+ * @since 2018-04-05
  */
 abstract class BaseFragment : Fragment() {
 
