@@ -12,6 +12,12 @@ import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar.*
 
+/**
+ * Сontains Fragment that is selected through Menu of Navigation Drawer
+ *
+ * @author Alex Kisel
+ * @since 2018-04-03
+ */
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
