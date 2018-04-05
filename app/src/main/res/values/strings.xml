@@ -3,4 +3,26 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="url_one">https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1041px-Star_Wars_Logo.svg.png
+    </string>
+    <string name="url_two">https://upload.wikimedia.org/wikipedia/en/7/76/Darth_Vader.jpg
+    </string>
+    <string name="url_three">https://upload.wikimedia.org/wikipedia/en/9/9b/Yoda_Empire_Strikes_Back.png
+    </string>
+
+    <string name="url_two_decr">Darth Vader, also known by his birth name Anakin Skywalker,
+        is a fictional character in the Star Wars franchise. Vader appears in the
+        original span of the saga going from being Anakin Skywalker, the prophesied child who
+        would bring balance to the Force, to his corruption and transformation into Darth Vader,
+        to being the pivotal antagonist, and eventual redemption and fulfillment of the prophecy.
+    </string>
+    <string name="url_three_decr">Yoda is a fictional character in the Star Wars franchise created
+        by George Lucas, first appearing in the 1980 film The Empire Strikes Back. In the original
+        films, he trains Luke Skywalker to fight against the Galactic Empire. In the prequel films,
+        he serves as the Grand Master of the Jedi Order and as a high-ranking general of Clone
+        Troopers in the Clone Wars. Before his death in Return of the Jedi at the age of 900,
+        Yoda was the oldest living character in the Star Wars franchise in canon, until the
+        introduction of Maz Kanata in Star Wars: The Force Awakens.
+    </string>
 </resources>
