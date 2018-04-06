@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.app_bar.*
  * Сontains Fragment that is selected through Menu of Navigation Drawer
  *
  * @author Alex Kisel
- * @since 2018-04-03
+ * @since 2018-04-05
  */
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -23,12 +23,12 @@
             android:orientation="vertical">
 
             <TextView
-                android:gravity="center"
-                android:text="Second Fragment"
-                android:textSize="26sp"
-                android:padding="7dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="7dp"
+                android:text="Second Fragment"
+                android:textSize="26sp" />
 
             <ImageView
                 android:id="@+id/image_view_second"
