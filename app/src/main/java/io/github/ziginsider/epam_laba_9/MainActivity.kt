@@ -33,23 +33,26 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
         navigation_view.setNavigationItemSelectedListener(this)
         setNavigationDrawerHeader()
-        setFragment(FirstFragment())
+        showFragment(MainFragment.newInstance(resources.getString(R.string.url_two),
+                resources.getString(R.string.url_two_decr)))
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.nav_fragment_first -> {
-                setFragment(FirstFragment())
+                showFragment(MainFragment.newInstance(resources.getString(R.string.url_two),
+                        resources.getString(R.string.url_two_decr)))
             }
             R.id.nav_fragment_second -> {
-                setFragment(SecondFragment())
+                showFragment(MainFragment.newInstance(resources.getString(R.string.url_three),
+                        resources.getString(R.string.url_three_decr)))
             }
         }
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
 
-    private fun setFragment(fragment: Fragment) {
+    private fun showFragment(fragment: Fragment) {
         supportFragmentManager
                 .beginTransaction()
                 .replace(R.id.fragment_container, fragment)

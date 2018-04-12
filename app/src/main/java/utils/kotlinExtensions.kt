@@ -6,6 +6,6 @@ import io.github.ziginsider.epam_laba_9.BuildConfig
 /**
  * Extension for LogCat
  */
-fun logd(className: String, message: String) {
-    if (BuildConfig.DEBUG) Log.d(className, message)
+fun logi(className: String, message: String) {
+    if (BuildConfig.DEBUG) Log.i(className, message)
 }

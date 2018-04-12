@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import io.github.ziginsider.epam_laba_9.utils.logd
+import io.github.ziginsider.epam_laba_9.utils.logi
 
 /**
  * <tt>Abstract</tt> Base Fragment that contains the base implementation for Fragment
@@ -17,7 +17,7 @@ import io.github.ziginsider.epam_laba_9.utils.logd
 abstract class BaseFragment : Fragment() {
 
     /**
-     * TAG for {@link utils#logd}
+     * TAG for {@link utils#logi}
      */
     protected abstract val logTag: String
 
@@ -29,68 +29,68 @@ abstract class BaseFragment : Fragment() {
     protected abstract fun getLayout(): Int
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        logd(logTag, "[ ON CREATE ]")
+        logi(logTag, "[ ON CREATE ]")
         super.onCreate(savedInstanceState)
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        logd(logTag, "[ ON CREATE VIEW ]")
+        logi(logTag, "[ ON CREATE VIEW ]")
         return inflater?.inflate(getLayout(), container, false)
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
-        logd(logTag, "[ ON VIEW CREATED ]")
+        logi(logTag, "[ ON VIEW CREATED ]")
         super.onViewCreated(view, savedInstanceState)
     }
 
     override fun onAttach(context: Context?) {
-        logd(logTag, "[ ON ATTACH ]")
+        logi(logTag, "[ ON ATTACH ]")
         super.onAttach(context)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
-        logd(logTag, "[ ON ACTIVITY CREATED ]")
+        logi(logTag, "[ ON ACTIVITY CREATED ]")
         super.onActivityCreated(savedInstanceState)
     }
 
     override fun onStart() {
-        logd(logTag, "[ ON START ]")
+        logi(logTag, "[ ON START ]")
         super.onStart()
     }
 
     override fun onResume() {
-        logd(logTag, "[ ON RESUME ]")
+        logi(logTag, "[ ON RESUME ]")
         super.onResume()
     }
 
     override fun onPause() {
-        logd(logTag, "[ ON PAUSE ]")
+        logi(logTag, "[ ON PAUSE ]")
         super.onPause()
     }
 
     override fun onSaveInstanceState(outState: Bundle?) {
-        logd(logTag, "[ ON SAVE INSTANCE STATE ]")
+        logi(logTag, "[ ON SAVE INSTANCE STATE ]")
         super.onSaveInstanceState(outState)
     }
 
     override fun onStop() {
-        logd(logTag, "[ ON STOP ]")
+        logi(logTag, "[ ON STOP ]")
         super.onStop()
     }
 
     override fun onDestroyView() {
-        logd(logTag, "[ ON DESTROY VIEW ]")
+        logi(logTag, "[ ON DESTROY VIEW ]")
         super.onDestroyView()
     }
 
     override fun onDestroy() {
-        logd(logTag, "[ ON DESTROY ]")
+        logi(logTag, "[ ON DESTROY ]")
         super.onDestroy()
     }
 
     override fun onDetach() {
-        logd(logTag, "[ ON DETACH ]")
+        logi(logTag, "[ ON DETACH ]")
         super.onDetach()
     }
 }
