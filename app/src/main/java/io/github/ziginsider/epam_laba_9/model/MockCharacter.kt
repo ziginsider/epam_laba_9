@@ -1,7 +1,7 @@
 package io.github.ziginsider.epam_laba_8.model
 
 import android.content.res.Resources
-import io.github.ziginsider.epam_laba_8.R
+import io.github.ziginsider.epam_laba_9.R
 
 /**
  * Generates list of characters
