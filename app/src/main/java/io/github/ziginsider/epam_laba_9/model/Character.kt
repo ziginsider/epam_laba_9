@@ -1,4 +1,4 @@
-package io.github.ziginsider.epam_laba_8.model
+package io.github.ziginsider.epam_laba_9.model
 
 /**
  * Model of characters with id, name and description

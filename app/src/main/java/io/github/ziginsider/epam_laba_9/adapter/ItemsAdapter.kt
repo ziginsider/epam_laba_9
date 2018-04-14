@@ -3,10 +3,9 @@ package io.github.ziginsider.epam_laba_8.adapter
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
-import io.github.ziginsider.epam_laba_8.R
-import io.github.ziginsider.epam_laba_8.model.Character
-import io.github.ziginsider.epam_laba_8.utils.asDp
-import io.github.ziginsider.epam_laba_8.utils.inflate
+import io.github.ziginsider.epam_laba_9.model.Character
+import io.github.ziginsider.epam_laba_9.R
+import io.github.ziginsider.epam_laba_9.utils.asDp
 import io.github.ziginsider.epam_laba_9.utils.inflate
 import kotlinx.android.synthetic.main.item_view.view.*
 

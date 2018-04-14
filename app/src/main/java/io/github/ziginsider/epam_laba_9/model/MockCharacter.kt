@@ -1,4 +1,4 @@
-package io.github.ziginsider.epam_laba_8.model
+package io.github.ziginsider.epam_laba_9.model
 
 import android.content.res.Resources
 import io.github.ziginsider.epam_laba_9.R
