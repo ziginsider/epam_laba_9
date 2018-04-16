@@ -9,6 +9,8 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.view.MenuItem
 import android.widget.ImageView
 import com.bumptech.glide.Glide
+import io.github.ziginsider.epam_laba_9.model.Character
+import io.github.ziginsider.epam_laba_9.utils.toast
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar.*
 
@@ -18,7 +20,8 @@ import kotlinx.android.synthetic.main.app_bar.*
  * @author Alex Kisel
  * @since 2018-04-05
  */
-class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener,
+        RecyclerViewFragment.ItemClickEventListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -63,4 +66,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 .load(resources.getString(R.string.url_one))
                 .into(img)
     }
+
+    override fun onFragmentItemClick(item: Character) {
+        toast("I'm ${item.name} !")
+    }
+
+
 }
