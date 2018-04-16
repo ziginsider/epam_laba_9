@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 showFragment(RecyclerViewFragment())
             }
             R.id.nav_fragment_second -> {
-                showFragment(RecyclerViewFragment())
+                showFragment(ListViewFragment())
             }
         }
         drawer_layout.closeDrawer(GravityCompat.START)

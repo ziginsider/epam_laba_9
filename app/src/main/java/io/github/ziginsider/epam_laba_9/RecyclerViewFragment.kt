@@ -53,6 +53,12 @@ class RecyclerViewFragment : BaseFragment() {
         }
     }
 
+    override fun onDetach() {
+        super.onDetach()
+        listener = null
+        recyclerAdapter = null
+    }
+
     private fun setUpRecyclerView(items: List<Character>) {
         recyclerAdapter = RecyclerViewAdapter(items,
                 R.layout.item_view,
@@ -70,12 +76,6 @@ class RecyclerViewFragment : BaseFragment() {
         recyclerAdapter?.update(list) ?: setUpRecyclerView(list)
     }
 
-    override fun onDetach() {
-        super.onDetach()
-        listener = null
-        recyclerAdapter = null
-    }
-
     class OnScrollListener(val fab: FloatingActionButton) : RecyclerView.OnScrollListener() {
         override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
             super.onScrolled(recyclerView, dx, dy)
@@ -86,8 +86,4 @@ class RecyclerViewFragment : BaseFragment() {
             }
         }
     }
-
-
-
-
 }
