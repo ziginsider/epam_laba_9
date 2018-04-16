@@ -10,8 +10,9 @@ import android.widget.TextView
 import io.github.ziginsider.epam_laba_9.R
 import io.github.ziginsider.epam_laba_9.model.Character
 
-class ListViewAdapter(val context: Context,
-                      var items: List<Character>)
+class ListViewAdapter(context: Context,
+                      private val items: List<Character>,
+                      private var itemClick: Character.() -> Unit = {})
     : BaseAdapter() {
 
     private val inflator: LayoutInflater = LayoutInflater.from(context)
@@ -47,6 +48,11 @@ class ListViewAdapter(val context: Context,
                 11 -> this.image.setImageResource(R.drawable.domitian)
             }
         }
+
+        view?.setOnClickListener {
+            onItemClick(position)
+        }
+
         return view
     }
 
@@ -60,5 +66,9 @@ class ListViewAdapter(val context: Context,
         val name: TextView = view?.findViewById(R.id.emperorName) as TextView
         val date: TextView = view?.findViewById(R.id.emperorDate) as TextView
         val image: ImageView = view?.findViewById(R.id.emperorImage) as ImageView
+    }
+
+    private fun onItemClick(position: Int) {
+        items[position].itemClick()
     }
 }

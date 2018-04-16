@@ -4,6 +4,7 @@ import android.os.Bundle
 import io.github.ziginsider.epam_laba_9.adapter.ListViewAdapter
 import io.github.ziginsider.epam_laba_9.model.Character
 import io.github.ziginsider.epam_laba_9.model.MockCharacter
+import io.github.ziginsider.epam_laba_9.utils.toast
 import kotlinx.android.synthetic.main.fragment_list.*
 
 class ListViewFragment: BaseFragment() {
@@ -28,11 +29,9 @@ class ListViewFragment: BaseFragment() {
     }
 
     private fun setUpListView(items: List<Character>) {
-        listViewAdapter = ListViewAdapter(context, items)
+        listViewAdapter = ListViewAdapter(context, items, {activity.toast("I'm  $name !!")})
         with(listView) {
             adapter = listViewAdapter
         }
     }
-
-
 }

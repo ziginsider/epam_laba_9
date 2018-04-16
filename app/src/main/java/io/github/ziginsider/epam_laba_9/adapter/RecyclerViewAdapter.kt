@@ -15,8 +15,8 @@ import kotlinx.android.synthetic.main.item_view.view.*
  * @author Alex Kisel
  * @since 2018-04-03
  */
-class RecyclerViewAdapter(var items: List<Character>,
-                          val layoutResId: Int,
+class RecyclerViewAdapter(private var items: List<Character>,
+                          private val layoutResId: Int,
                           private var itemClick: Character.() -> Unit = {})
     : RecyclerView.Adapter<RecyclerViewAdapter.Holder>() {
     class Holder(itemView: View) : RecyclerView.ViewHolder(itemView)
