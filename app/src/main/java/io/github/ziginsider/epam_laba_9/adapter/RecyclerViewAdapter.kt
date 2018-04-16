@@ -1,5 +1,6 @@
 package io.github.ziginsider.epam_laba_9.adapter
 
+import android.support.v7.util.DiffUtil
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +15,7 @@ import kotlinx.android.synthetic.main.item_view.view.*
  * @author Alex Kisel
  * @since 2018-04-03
  */
-class RecyclerViewAdapter(val items: List<Character>,
+class RecyclerViewAdapter(var items: List<Character>,
                           val layoutResId: Int,
                           private var itemClick: Character.() -> Unit = {})
     : RecyclerView.Adapter<RecyclerViewAdapter.Holder>() {
@@ -61,5 +62,11 @@ class RecyclerViewAdapter(val items: List<Character>,
             10 -> emperorImage.setImageResource(R.drawable.titus)
             11 -> emperorImage.setImageResource(R.drawable.domitian)
         }
+    }
+
+    fun update(newItemList: List<Character>) {
+        val result = DiffUtil.calculateDiff(DiffUtilCallback(items, newItemList))
+        items = newItemList
+        result.dispatchUpdatesTo(this)
     }
 }

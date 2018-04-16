@@ -17,7 +17,7 @@ class MockCharacter(val res: Resources) {
      *
      * @return list of characters
      */
-    fun generateStarWarsCharacters(): List<Character> {
+    fun generateEmperorCharacters(): List<Character> {
         val characters = ArrayList<Character>()
         characters.add(Character(0, res.getString(R.string.caesar_name),
                 res.getString(R.string.caesar_date)))

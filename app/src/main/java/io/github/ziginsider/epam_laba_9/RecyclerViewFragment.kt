@@ -6,7 +6,6 @@ import android.support.design.widget.FloatingActionButton
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
-import android.widget.Toast
 import io.github.ziginsider.epam_laba_9.adapter.RecyclerViewAdapter
 import io.github.ziginsider.epam_laba_9.model.Character
 import io.github.ziginsider.epam_laba_9.model.MockCharacter
@@ -21,14 +20,14 @@ import kotlinx.android.synthetic.main.fragment_recycler.*
 class RecyclerViewFragment : BaseFragment() {
     override val logTag = RecyclerViewFragment::class.java.simpleName
 
-    val scrollListener: OnScrollListener by lazy { OnScrollListener(fab) }
-
     interface ItemClickEventListener {
         fun onFragmentItemClick(item: Character)
     }
 
+    private val scrollListener: OnScrollListener by lazy { OnScrollListener(fab) }
     private var listener: ItemClickEventListener? = null
     private var recyclerAdapter: RecyclerViewAdapter? = null
+    private lateinit var characters: List<Character>
 
     override fun getLayout(): Int {
         return R.layout.fragment_recycler
@@ -46,10 +45,11 @@ class RecyclerViewFragment : BaseFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val characters = MockCharacter(resources).generateStarWarsCharacters()
+        characters = MockCharacter(resources).generateEmperorCharacters()
         setUpRecyclerView(characters)
         fab.setOnClickListener {
-            Toast.makeText(context, "Click!", Toast.LENGTH_SHORT).show()
+            characters = characters.shuffled()
+            updateAdapter(characters)
         }
     }
 
@@ -64,6 +64,10 @@ class RecyclerViewFragment : BaseFragment() {
             addOnScrollListener(scrollListener)
         }
 
+    }
+
+    private fun updateAdapter(list: List<Character>) {
+        recyclerAdapter?.update(list) ?: setUpRecyclerView(list)
     }
 
     override fun onDetach() {
