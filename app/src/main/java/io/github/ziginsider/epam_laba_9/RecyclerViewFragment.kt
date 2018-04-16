@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
+import android.widget.Toast
 import io.github.ziginsider.epam_laba_9.adapter.RecyclerViewAdapter
 import io.github.ziginsider.epam_laba_9.model.Character
 import io.github.ziginsider.epam_laba_9.model.MockCharacter
@@ -47,6 +48,9 @@ class RecyclerViewFragment : BaseFragment() {
         super.onActivityCreated(savedInstanceState)
         val characters = MockCharacter(resources).generateStarWarsCharacters()
         setUpRecyclerView(characters)
+        fab.setOnClickListener {
+            Toast.makeText(context, "Click!", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun setUpRecyclerView(items: List<Character>) {
