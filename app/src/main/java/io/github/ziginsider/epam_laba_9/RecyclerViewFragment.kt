@@ -2,7 +2,10 @@ package io.github.ziginsider.epam_laba_9
 
 import android.content.Context
 import android.os.Bundle
+import android.support.design.widget.FloatingActionButton
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
+import android.view.View
 import io.github.ziginsider.epam_laba_9.adapter.ItemsAdapter
 import io.github.ziginsider.epam_laba_9.model.Character
 import io.github.ziginsider.epam_laba_9.model.MockCharacter
@@ -16,6 +19,8 @@ import kotlinx.android.synthetic.main.fragment_recycler.*
  */
 class RecyclerViewFragment : BaseFragment() {
     override val logTag = RecyclerViewFragment::class.java.simpleName
+
+    val scrollListener: OnScrollListener by lazy { OnScrollListener(fab) }
 
     interface ItemClickEventListener {
         fun onFragmentItemClick(item: Character)
@@ -52,7 +57,9 @@ class RecyclerViewFragment : BaseFragment() {
             layoutManager = LinearLayoutManager(activity)
             setHasFixedSize(true)
             adapter = recyclerAdapter
+            addOnScrollListener(scrollListener)
         }
+
     }
 
     override fun onDetach() {
@@ -61,7 +68,16 @@ class RecyclerViewFragment : BaseFragment() {
         recyclerAdapter = null
     }
 
-
+    class OnScrollListener(val fab: FloatingActionButton) : RecyclerView.OnScrollListener() {
+        override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
+            super.onScrolled(recyclerView, dx, dy)
+            if (dy > 0 && fab.visibility == View.VISIBLE) {
+                fab.hide()
+            } else if (dy < 0 && fab.visibility != View.VISIBLE) {
+                fab.show()
+            }
+        }
+    }
 
 
 

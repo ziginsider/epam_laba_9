@@ -17,7 +17,7 @@ fun logi(className: String, message: String) {
 }
 
 /**
- * Extension for ViewGroup. Inflates view/
+ * Extension for ViewGroup. Inflates fab/
  *
  * @return Inflated View
  */
