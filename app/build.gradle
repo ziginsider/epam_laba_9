@@ -25,7 +25,7 @@ task checkstyle(type: Checkstyle) {
 }
 
 checkstyle {
-    dependencies {checkstyle "com.puppycrawl.tools:checkstyle:8.8"}
+    dependencies { checkstyle "com.puppycrawl.tools:checkstyle:8.8" }
 }
 
 dependencies {

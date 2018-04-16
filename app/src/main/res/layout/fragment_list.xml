@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context="io.github.ziginsider.epam_laba_9.ListViewFragment">
 
-
     <TextView
         android:id="@+id/listTextView"
         android:layout_width="wrap_content"
@@ -31,5 +30,4 @@
         android:src="@drawable/ic_mix"
         app:layout_anchor="@id/listView"
         app:layout_anchorGravity="bottom|right|end" />
-
 </android.support.design.widget.CoordinatorLayout>
