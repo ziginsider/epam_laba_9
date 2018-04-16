@@ -5,7 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import io.github.ziginsider.epam_laba_9.model.Character
 import io.github.ziginsider.epam_laba_9.R
-import io.github.ziginsider.epam_laba_9.utils.asDp
 import io.github.ziginsider.epam_laba_9.utils.inflate
 import kotlinx.android.synthetic.main.item_view.view.*
 
@@ -15,10 +14,10 @@ import kotlinx.android.synthetic.main.item_view.view.*
  * @author Alex Kisel
  * @since 2018-04-03
  */
-class ItemsAdapter(val items: List<Character>,
-                   val layoutResId: Int,
-                   private var itemClick: Character.() -> Unit = {})
-    : RecyclerView.Adapter<ItemsAdapter.Holder>() {
+class RecyclerViewAdapter(val items: List<Character>,
+                          val layoutResId: Int,
+                          private var itemClick: Character.() -> Unit = {})
+    : RecyclerView.Adapter<RecyclerViewAdapter.Holder>() {
     class Holder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
@@ -46,19 +45,21 @@ class ItemsAdapter(val items: List<Character>,
     }
 
     private fun View.bind(item: Character) {
-        heroName.text = item.name
+        emperorName.text = item.name
+        emperorDate.text = item.date
         when (item.id) {
-            0 -> {
-                heroImage.layoutParams.height = 30.asDp
-                heroImage.setImageResource(R.drawable.yoda)
-            }
-            1 -> heroImage.setImageResource(R.drawable.luke_skywalker)
-            2 -> heroImage.setImageResource(R.drawable.princess_leia)
-            3 -> heroImage.setImageResource(R.drawable.han_solo)
-            4 -> heroImage.setImageResource(R.drawable.chewbacca)
-            5 -> heroImage.setImageResource(R.drawable.darth_vader)
-            6 -> heroImage.setImageResource(R.drawable.r2_d2)
-            7 -> heroImage.setImageResource(R.drawable.c_3po)
+            0 -> emperorImage.setImageResource(R.drawable.caesar)
+            1 -> emperorImage.setImageResource(R.drawable.augustus)
+            2 -> emperorImage.setImageResource(R.drawable.tiberius)
+            3 -> emperorImage.setImageResource(R.drawable.caligula)
+            4 -> emperorImage.setImageResource(R.drawable.claudius)
+            5 -> emperorImage.setImageResource(R.drawable.nero)
+            6 -> emperorImage.setImageResource(R.drawable.galba)
+            7 -> emperorImage.setImageResource(R.drawable.otho)
+            8 -> emperorImage.setImageResource(R.drawable.vithelius)
+            9 -> emperorImage.setImageResource(R.drawable.vespasian)
+            10 -> emperorImage.setImageResource(R.drawable.titus)
+            11 -> emperorImage.setImageResource(R.drawable.domitian)
         }
     }
 }

@@ -19,15 +19,19 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/heroImage"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:id="@+id/emperorImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_margin="3dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="48dp"
             android:scaleType="centerCrop"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/heroName"
+            android:id="@+id/emperorName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -37,7 +41,17 @@
             android:text="Name Name"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/heroImage"
+            app:layout_constraintStart_toEndOf="@+id/emperorImage"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/emperorDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:text="date date"
+            app:layout_constraintStart_toEndOf="@+id/emperorImage"
+            app:layout_constraintTop_toBottomOf="@+id/emperorName" />
     </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.CardView>

@@ -6,7 +6,7 @@ import android.support.design.widget.FloatingActionButton
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
-import io.github.ziginsider.epam_laba_9.adapter.ItemsAdapter
+import io.github.ziginsider.epam_laba_9.adapter.RecyclerViewAdapter
 import io.github.ziginsider.epam_laba_9.model.Character
 import io.github.ziginsider.epam_laba_9.model.MockCharacter
 import kotlinx.android.synthetic.main.fragment_recycler.*
@@ -27,7 +27,7 @@ class RecyclerViewFragment : BaseFragment() {
     }
 
     private var listener: ItemClickEventListener? = null
-    private var recyclerAdapter: ItemsAdapter? = null
+    private var recyclerAdapter: RecyclerViewAdapter? = null
 
     override fun getLayout(): Int {
         return R.layout.fragment_recycler
@@ -50,7 +50,7 @@ class RecyclerViewFragment : BaseFragment() {
     }
 
     private fun setUpRecyclerView(items: List<Character>) {
-        recyclerAdapter = ItemsAdapter(items,
+        recyclerAdapter = RecyclerViewAdapter(items,
                 R.layout.item_view,
                 { listener?.onFragmentItemClick(this) })
         with(recyclerView) {

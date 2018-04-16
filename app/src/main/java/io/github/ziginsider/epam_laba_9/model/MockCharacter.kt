@@ -19,22 +19,30 @@ class MockCharacter(val res: Resources) {
      */
     fun generateStarWarsCharacters(): List<Character> {
         val characters = ArrayList<Character>()
-        characters.add(Character(0, res.getString(R.string.yoda_name),
-                res.getString(R.string.yoda_description)))
-        characters.add(Character(1, res.getString(R.string.luk_name),
-                res.getString(R.string.luk_description)))
-        characters.add(Character(2, res.getString(R.string.princess_name),
-                res.getString(R.string.princess_description)))
-        characters.add(Character(3, res.getString(R.string.han_name),
-                res.getString(R.string.han_description)))
-        characters.add(Character(4, res.getString(R.string.chewbacca_name),
-                res.getString(R.string.chewbacca_description)))
-        characters.add(Character(5, res.getString(R.string.darth_name),
-                res.getString(R.string.darth_description)))
-        characters.add(Character(6, res.getString(R.string.r2_name),
-                res.getString(R.string.r2_description)))
-        characters.add(Character(7, res.getString(R.string.c_name),
-                res.getString(R.string.c_description)))
+        characters.add(Character(0, res.getString(R.string.caesar_name),
+                res.getString(R.string.caesar_date)))
+        characters.add(Character(1, res.getString(R.string.augustus_name),
+                res.getString(R.string.augustus_date)))
+        characters.add(Character(2, res.getString(R.string.caligula_name),
+                res.getString(R.string.caligula_date)))
+        characters.add(Character(3, res.getString(R.string.claudius_name),
+                res.getString(R.string.claudius_date)))
+        characters.add(Character(4, res.getString(R.string.tiberius_name),
+                res.getString(R.string.tiberius_date)))
+        characters.add(Character(5, res.getString(R.string.nero_name),
+                res.getString(R.string.nero_date)))
+        characters.add(Character(6, res.getString(R.string.galba_name),
+                res.getString(R.string.galba_date)))
+        characters.add(Character(7, res.getString(R.string.otho_name),
+                res.getString(R.string.otho_date)))
+        characters.add(Character(8, res.getString(R.string.vitelius_name),
+                res.getString(R.string.vitelius_date)))
+        characters.add(Character(9, res.getString(R.string.vespasian_name),
+                res.getString(R.string.vespasian_date)))
+        characters.add(Character(10, res.getString(R.string.titus_name),
+                res.getString(R.string.titus_date)))
+        characters.add(Character(11, res.getString(R.string.domitian_name),
+                res.getString(R.string.domitian_date)))
         return characters
     }
 }
