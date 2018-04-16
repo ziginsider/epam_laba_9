@@ -33,19 +33,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
         navigation_view.setNavigationItemSelectedListener(this)
         setNavigationDrawerHeader()
-        showFragment(MainFragment.newInstance(resources.getString(R.string.url_two),
-                resources.getString(R.string.url_two_decr)))
+        showFragment(RecyclerViewFragment())
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.nav_fragment_first -> {
-                showFragment(MainFragment.newInstance(resources.getString(R.string.url_two),
-                        resources.getString(R.string.url_two_decr)))
+                showFragment(RecyclerViewFragment())
             }
             R.id.nav_fragment_second -> {
-                showFragment(MainFragment.newInstance(resources.getString(R.string.url_three),
-                        resources.getString(R.string.url_three_decr)))
+                showFragment(RecyclerViewFragment())
             }
         }
         drawer_layout.closeDrawer(GravityCompat.START)

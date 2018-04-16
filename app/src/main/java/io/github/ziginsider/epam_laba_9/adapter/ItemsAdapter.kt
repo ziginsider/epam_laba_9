@@ -1,4 +1,4 @@
-package io.github.ziginsider.epam_laba_8.adapter
+package io.github.ziginsider.epam_laba_9.adapter
 
 import android.support.v7.widget.RecyclerView
 import android.view.View
