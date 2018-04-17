@@ -6,14 +6,14 @@ import io.github.ziginsider.epam_laba_9.R
 /**
  * Generates list of characters
  *
- * @see {@link Character}
+ * @see [Character]
  *
  * @author Alex Kisel
- * @since 2018-04-03
+ * @since 2018-04-14
  */
 class MockCharacter(val res: Resources) {
     /**
-     * Generates list of characters {@link model#Character}
+     * Generates list of characters [Character]
      *
      * @return list of characters
      */

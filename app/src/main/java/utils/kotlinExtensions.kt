@@ -1,8 +1,6 @@
 package io.github.ziginsider.epam_laba_9.utils
 
 import android.app.Activity
-import android.app.Fragment
-import android.content.res.Resources
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -18,7 +16,7 @@ fun logi(className: String, message: String) {
 }
 
 /**
- * Extension for ViewGroup. Inflates fab/
+ * Extension for ViewGroup.
  *
  * @return Inflated View
  */

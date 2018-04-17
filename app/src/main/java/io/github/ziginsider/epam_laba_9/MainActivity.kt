@@ -15,10 +15,14 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar.*
 
 /**
- * Сontains Fragment that is selected through Menu of Navigation Drawer
+ * Сontains Fragments that is selected through Menu of Navigation Drawer
+ *
+ * First Fragment [RecyclerViewFragment] contains a RecyclerView which shows list of
+ * {@link model#Character}. Implements [RecyclerViewFragment.ItemClickEventListener] for
+ * getting touch to [RecyclerViewFragment].
  *
  * @author Alex Kisel
- * @since 2018-04-05
+ * @since 2018-04-15
  */
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener,
         RecyclerViewFragment.ItemClickEventListener {
@@ -70,6 +74,4 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onFragmentItemClick(item: Character) {
         toast("I'm ${item.name} !")
     }
-
-
 }

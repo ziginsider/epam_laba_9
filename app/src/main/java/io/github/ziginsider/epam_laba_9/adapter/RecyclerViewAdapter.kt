@@ -10,10 +10,12 @@ import io.github.ziginsider.epam_laba_9.utils.inflate
 import kotlinx.android.synthetic.main.item_view.view.*
 
 /**
- * Adapter for list of characters {@link model#Character}
+ * Adapter for list of characters [Character]
+ *
+ * Uses [DiffUtilCallback] for renew list of items
  *
  * @author Alex Kisel
- * @since 2018-04-03
+ * @since 2018-04-15
  */
 class RecyclerViewAdapter(private var items: List<Character>,
                           private val layoutResId: Int,
@@ -64,6 +66,11 @@ class RecyclerViewAdapter(private var items: List<Character>,
         }
     }
 
+    /**
+     * Updates the list of items according to new data
+     *
+     * @param newItemList new data for list of items
+     */
     fun update(newItemList: List<Character>) {
         val result = DiffUtil.calculateDiff(DiffUtilCallback(items, newItemList))
         items = newItemList

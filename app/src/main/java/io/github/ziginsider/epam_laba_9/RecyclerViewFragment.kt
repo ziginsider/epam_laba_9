@@ -12,10 +12,16 @@ import io.github.ziginsider.epam_laba_9.model.MockCharacter
 import kotlinx.android.synthetic.main.fragment_recycler.*
 
 /**
- * Implements First Fragment
+ * Implements Fragment that contains a RecyclerView which shows list of [Character]
+ *
+ * Declares interface [ItemClickEventListener] for getting
+ * touch to Activity
+ *
+ * Contains an implementation for [RecyclerView.OnScrollListener] to show/hide
+ * Floating Action Button
  *
  * @author Alex Kisel
- * @since 2018-04-05
+ * @since 2018-04-15
  */
 class RecyclerViewFragment : BaseFragment() {
     override val logTag = RecyclerViewFragment::class.java.simpleName
@@ -69,13 +75,15 @@ class RecyclerViewFragment : BaseFragment() {
             adapter = recyclerAdapter
             addOnScrollListener(scrollListener)
         }
-
     }
 
     private fun updateAdapter(list: List<Character>) {
         recyclerAdapter?.update(list) ?: setUpRecyclerView(list)
     }
 
+    /**
+     * Implements [RecyclerView.OnScrollListener] with show/hide Floating Action Button
+     */
     class OnScrollListener(val fab: FloatingActionButton) : RecyclerView.OnScrollListener() {
         override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
             super.onScrolled(recyclerView, dx, dy)

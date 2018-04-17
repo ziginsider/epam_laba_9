@@ -9,6 +9,15 @@ import kotlinx.android.synthetic.main.fragment_list.*
 import android.support.design.widget.FloatingActionButton
 import android.widget.AbsListView
 
+/**
+ * Implements Fragment that contains a ListView which shows list of [Character]
+ *
+ * Contains an implementation for [AbsListView.OnScrollListener] to show/hide
+ * Floating Action Button
+ *
+ * @author Alex Kisel
+ * @since 2018-04-15
+ */
 class ListViewFragment : BaseFragment() {
     override val logTag = ListViewFragment::class.java.simpleName
 
@@ -45,6 +54,9 @@ class ListViewFragment : BaseFragment() {
         }
     }
 
+    /**
+     * Implements [AbsListView.OnScrollListener] with show/hide Floating Action Button
+     */
     class OnScrollListener(val fab: FloatingActionButton) : AbsListView.OnScrollListener {
         private var lastPosition = 1
 
@@ -61,5 +73,4 @@ class ListViewFragment : BaseFragment() {
             lastPosition = firstVisibleItem
         }
     }
-
 }
