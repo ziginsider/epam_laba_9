@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private fun setNavigationDrawerHeader() {
         val v = navigationView.inflateHeaderView(R.layout.header_layout)
-        val img = v.findViewById(R.id.imageViewHeader) as ImageView
+        val img = v.findViewById<ImageView>(R.id.imageViewHeader)
         Glide.with(img.context)
                 .load(resources.getString(R.string.url_one))
                 .into(img)

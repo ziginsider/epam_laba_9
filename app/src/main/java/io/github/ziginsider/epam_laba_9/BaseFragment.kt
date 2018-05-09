@@ -21,11 +21,9 @@ abstract class BaseFragment : Fragment() {
     protected abstract val logTag: String
 
     /**
-     * Gets resource id of layout for Fragment inflater
-     *
-     * @return Int resource id of layout for Fragment inflater
+     * Resource id of layout for Fragment inflater
      */
-    protected abstract fun getLayout(): Int
+    protected abstract val layout: Int
 
     override fun onCreate(savedInstanceState: Bundle?) {
         logi(logTag, "[ ON CREATE ]")
@@ -35,7 +33,7 @@ abstract class BaseFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         logi(logTag, "[ ON CREATE VIEW ]")
-        return inflater?.inflate(getLayout(), container, false)
+        return inflater?.inflate(layout, container, false)
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {

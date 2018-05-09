@@ -35,9 +35,7 @@ class RecyclerViewFragment : BaseFragment() {
     private var recyclerAdapter: RecyclerViewAdapter? = null
     private lateinit var characters: List<Character>
 
-    override fun getLayout(): Int {
-        return R.layout.fragment_recycler
-    }
+    override val layout = R.layout.fragment_recycler
 
     override fun onAttach(context: Context?) {
         super.onAttach(context)

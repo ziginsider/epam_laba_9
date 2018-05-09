@@ -25,9 +25,7 @@ class ListViewFragment : BaseFragment() {
     private var listViewAdapter: ListViewAdapter? = null
     private lateinit var characters: List<Character>
 
-    override fun getLayout(): Int {
-        return R.layout.fragment_list
-    }
+    override val layout = R.layout.fragment_list
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
