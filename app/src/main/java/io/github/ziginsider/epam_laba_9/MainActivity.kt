@@ -46,12 +46,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.nav_fragment_first -> {
-                showFragment(RecyclerViewFragment())
-            }
-            R.id.nav_fragment_second -> {
-                showFragment(ListViewFragment())
-            }
+            R.id.nav_fragment_first -> showFragment(RecyclerViewFragment())
+            R.id.nav_fragment_second -> showFragment(ListViewFragment())
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
