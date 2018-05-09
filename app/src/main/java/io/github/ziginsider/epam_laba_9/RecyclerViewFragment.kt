@@ -24,15 +24,15 @@ import kotlinx.android.synthetic.main.fragment_recycler.*
  * @since 2018-04-15
  */
 class RecyclerViewFragment : BaseFragment() {
+
     override val logTag = RecyclerViewFragment::class.java.simpleName
 
     interface ItemClickEventListener {
         fun onFragmentItemClick(item: Character)
     }
 
-    private val scrollListener: OnScrollListener by lazy { OnScrollListener(fab) }
     private var listener: ItemClickEventListener? = null
-    private var recyclerAdapter: RecyclerViewAdapter? = null
+    private lateinit var recyclerAdapter: RecyclerViewAdapter
     private lateinit var characters: List<Character>
 
     override val layout = R.layout.fragment_recycler
@@ -60,7 +60,6 @@ class RecyclerViewFragment : BaseFragment() {
     override fun onDetach() {
         super.onDetach()
         listener = null
-        recyclerAdapter = null
     }
 
     private fun setUpRecyclerView(items: List<Character>) {
@@ -71,12 +70,12 @@ class RecyclerViewFragment : BaseFragment() {
             layoutManager = LinearLayoutManager(activity)
             setHasFixedSize(true)
             adapter = recyclerAdapter
-            addOnScrollListener(scrollListener)
+            addOnScrollListener(OnScrollListener(fab))
         }
     }
 
     private fun updateAdapter(list: List<Character>) {
-        recyclerAdapter?.update(list) ?: setUpRecyclerView(list)
+        recyclerAdapter.update(list)
     }
 
     /**

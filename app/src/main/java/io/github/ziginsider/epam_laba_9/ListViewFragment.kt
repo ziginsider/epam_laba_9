@@ -19,10 +19,10 @@ import android.widget.AbsListView
  * @since 2018-04-15
  */
 class ListViewFragment : BaseFragment() {
+
     override val logTag = ListViewFragment::class.java.simpleName
 
-    private val scrollListener: OnScrollListener by lazy { OnScrollListener(fabList) }
-    private var listViewAdapter: ListViewAdapter? = null
+    private lateinit var listViewAdapter: ListViewAdapter
     private lateinit var characters: List<Character>
 
     override val layout = R.layout.fragment_list
@@ -36,11 +36,6 @@ class ListViewFragment : BaseFragment() {
         }
     }
 
-    override fun onDetach() {
-        super.onDetach()
-        listViewAdapter = null
-    }
-
     private fun setUpListView(items: List<Character>) {
         listViewAdapter = ListViewAdapter(
                 context,
@@ -48,7 +43,7 @@ class ListViewFragment : BaseFragment() {
                 { activity.toast("I'm  $name !!") })
         with(listView) {
             adapter = listViewAdapter
-            setOnScrollListener(scrollListener)
+            setOnScrollListener(OnScrollListener(fabList))
         }
     }
 
