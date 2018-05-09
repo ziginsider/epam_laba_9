@@ -22,6 +22,7 @@ class ListViewAdapter(context: Context,
                       private val items: List<Character>,
                       private var itemClick: Character.() -> Unit = {})
     : BaseAdapter() {
+
     private val inflator: LayoutInflater = LayoutInflater.from(context)
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
@@ -37,21 +38,22 @@ class ListViewAdapter(context: Context,
         }
         val item = items[position]
         with(viewHolder) {
-            name.text = item.name
-            date.text = item.date
+            name?.text = item.name
+            date?.text = item.date
             when (item.id) {
-                0 -> image.setImageResource(R.drawable.caesar)
-                1 -> image.setImageResource(R.drawable.augustus)
-                2 -> image.setImageResource(R.drawable.tiberius)
-                3 -> image.setImageResource(R.drawable.caligula)
-                4 -> image.setImageResource(R.drawable.claudius)
-                5 -> image.setImageResource(R.drawable.nero)
-                6 -> image.setImageResource(R.drawable.galba)
-                7 -> image.setImageResource(R.drawable.otho)
-                8 -> image.setImageResource(R.drawable.vithelius)
-                9 -> image.setImageResource(R.drawable.vespasian)
-                10 -> image.setImageResource(R.drawable.titus)
-                11 -> image.setImageResource(R.drawable.domitian)
+                0 -> image?.setImageResource(R.drawable.caesar)
+                1 -> image?.setImageResource(R.drawable.augustus)
+                2 -> image?.setImageResource(R.drawable.tiberius)
+                3 -> image?.setImageResource(R.drawable.caligula)
+                4 -> image?.setImageResource(R.drawable.claudius)
+                5 -> image?.setImageResource(R.drawable.nero)
+                6 -> image?.setImageResource(R.drawable.galba)
+                7 -> image?.setImageResource(R.drawable.otho)
+                8 -> image?.setImageResource(R.drawable.vithelius)
+                9 -> image?.setImageResource(R.drawable.vespasian)
+                10 -> image?.setImageResource(R.drawable.titus)
+                11 -> image?.setImageResource(R.drawable.domitian)
+                else -> null
             }
         }
         view?.setOnClickListener {
@@ -67,9 +69,9 @@ class ListViewAdapter(context: Context,
     override fun getCount() = items.size
 
     private class ListViewHolder(view: View?) {
-        val name: TextView = view?.findViewById(R.id.emperorName) as TextView
-        val date: TextView = view?.findViewById(R.id.emperorDate) as TextView
-        val image: ImageView = view?.findViewById(R.id.emperorImage) as ImageView
+        val name = view?.findViewById<TextView>(R.id.emperorName)
+        val date = view?.findViewById<TextView>(R.id.emperorDate)
+        val image = view?.findViewById<ImageView>(R.id.emperorImage)
     }
 
     private fun onItemClick(position: Int) {
