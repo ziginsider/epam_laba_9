@@ -26,19 +26,20 @@ import kotlinx.android.synthetic.main.app_bar.*
  */
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener,
         RecyclerViewFragment.ItemClickEventListener {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
         val toggle = ActionBarDrawerToggle(
                 this,
-                drawer_layout,
+                drawerLayout,
                 toolbar,
                 R.string.navigation_drawer_open,
                 R.string.navigation_drawer_close)
-        drawer_layout.addDrawerListener(toggle)
+        drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
-        navigation_view.setNavigationItemSelectedListener(this)
+        navigationView.setNavigationItemSelectedListener(this)
         setNavigationDrawerHeader()
         showFragment(RecyclerViewFragment())
     }
@@ -52,20 +53,20 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 showFragment(ListViewFragment())
             }
         }
-        drawer_layout.closeDrawer(GravityCompat.START)
+        drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
 
     private fun showFragment(fragment: Fragment) {
         supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.fragment_container, fragment)
+                .replace(R.id.fragmentContainer, fragment)
                 .commit()
     }
 
     private fun setNavigationDrawerHeader() {
-        val v = navigation_view.inflateHeaderView(R.layout.header_layout)
-        val img = v.findViewById(R.id.image_view_header) as ImageView
+        val v = navigationView.inflateHeaderView(R.layout.header_layout)
+        val img = v.findViewById(R.id.imageViewHeader) as ImageView
         Glide.with(img.context)
                 .load(resources.getString(R.string.url_one))
                 .into(img)

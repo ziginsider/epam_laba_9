@@ -22,7 +22,6 @@ class ListViewAdapter(context: Context,
                       private val items: List<Character>,
                       private var itemClick: Character.() -> Unit = {})
     : BaseAdapter() {
-
     private val inflator: LayoutInflater = LayoutInflater.from(context)
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {

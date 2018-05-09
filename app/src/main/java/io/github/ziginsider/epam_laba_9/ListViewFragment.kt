@@ -21,7 +21,7 @@ import android.widget.AbsListView
 class ListViewFragment : BaseFragment() {
     override val logTag = ListViewFragment::class.java.simpleName
 
-    private val scrollListener: OnScrollListener by lazy { OnScrollListener(fab_list) }
+    private val scrollListener: OnScrollListener by lazy { OnScrollListener(fabList) }
     private var listViewAdapter: ListViewAdapter? = null
     private lateinit var characters: List<Character>
 
@@ -33,7 +33,7 @@ class ListViewFragment : BaseFragment() {
         super.onActivityCreated(savedInstanceState)
         characters = MockCharacter(resources).generateEmperorCharacters()
         setUpListView(characters)
-        fab_list.setOnClickListener {
+        fabList.setOnClickListener {
             activity.toast("I'm FAB from ListView !")
         }
     }

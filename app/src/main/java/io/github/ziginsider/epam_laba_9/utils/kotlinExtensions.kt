@@ -12,7 +12,9 @@ import io.github.ziginsider.epam_laba_9.BuildConfig
  * Extension for LogCat
  */
 fun logi(className: String, message: String) {
-    if (BuildConfig.DEBUG) Log.i(className, message)
+    if (BuildConfig.DEBUG) {
+        Log.i(className, message)
+    }
 }
 
 /**
@@ -20,7 +22,7 @@ fun logi(className: String, message: String) {
  *
  * @return Inflated View
  */
-infix fun ViewGroup.inflate(layoutResId: Int): View =
+infix fun ViewGroup.inflate(layoutResId: Int) =
         LayoutInflater.from(context).inflate(layoutResId, this, false)
 
 /**
