@@ -21,6 +21,7 @@ class RecyclerViewAdapter(private var items: List<Character>,
                           private val layoutResId: Int,
                           private var itemClick: Character.() -> Unit = {})
     : RecyclerView.Adapter<RecyclerViewAdapter.Holder>() {
+
     class Holder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
